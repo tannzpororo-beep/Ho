@@ -1,0 +1,1 @@
+Original project source and generated original assets for Stickman Arena. You may modify and use this project in your own game. Third-party font loading is optional; the game falls back to system fonts.

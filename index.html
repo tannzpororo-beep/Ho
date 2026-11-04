@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0a1025"><meta name="description" content="Stickman Arena — offline 1v1 fighting game">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icons/icon-192.png">
+<link rel="stylesheet" href="style.css"><title>Stickman Arena</title>
+</head>
+<body>
+<div id="app">
+  <header class="topbar"><div class="brand"><span class="brand-mark">⚔</span><div><b>STICKMAN <em>ARENA</em></b><small>OFFLINE FIGHTING LEAGUE</small></div></div><div class="wallet"><span>◆</span><b id="coins">0</b><button class="icon-btn" id="soundBtn" aria-label="Sound">♫</button></div></header>
+  <main>
+    <section id="lobby" class="screen active">
+      <div class="hero"><div class="hero-copy"><span class="eyebrow">THE ULTIMATE 1V1 CHALLENGE</span><h1>ENTER THE<br><i>ARENA.</i></h1><p>Latih refleksmu. Kuasai skill. Kalahkan petarung AI dari Easy hingga Expert.</p><div class="hero-actions"><button class="primary" id="playBtn">▶ &nbsp; PLAY FIGHT</button><button class="secondary" id="shopBtn">◈ &nbsp; FIGHTER SHOP</button></div></div><div class="hero-art"><div class="orb"></div><div class="fighter fighter-a"><span></span></div><div class="fighter fighter-b"><span></span></div><div class="vs">VS</div><div class="art-caption">1 PLAYER <b>VS</b> CPU</div></div></div>
+      <div class="feature-row"><div class="feature"><b>01</b><span>OFFLINE MODE</span><small>Play anytime, anywhere</small></div><div class="feature"><b>02</b><span>4 AI LEVELS</span><small>Easy · Normal · Hard · Expert</small></div><div class="feature"><b>03</b><span>3 SPECIAL SKILLS</span><small>Build your combat style</small></div></div>
+      <div class="section-heading"><div><small>QUICK MATCH</small><h2>Choose your opponent</h2></div><span class="pill">BEST OF 1</span></div>
+      <div class="difficulty-grid"><button data-diff="easy" class="diff-card selected"><span class="diff-icon">✦</span><b>Easy</b><small>Warm up</small><i>AI Lv. 1</i></button><button data-diff="normal" class="diff-card"><span class="diff-icon">⚔</span><b>Normal</b><small>Balanced fight</small><i>AI Lv. 5</i></button><button data-diff="hard" class="diff-card"><span class="diff-icon">◆</span><b>Hard</b><small>Sharp reflexes</small><i>AI Lv. 10</i></button><button data-diff="expert" class="diff-card"><span class="diff-icon">☠</span><b>Expert</b><small>No mercy</small><i>AI Lv. 20</i></button></div>
+    </section>
+    <section id="shop" class="screen">
+      <div class="page-head"><button class="back" data-back>←</button><div><small>CUSTOMIZE YOUR FIGHTER</small><h1>FIGHTER SHOP</h1></div></div>
+      <div class="shop-intro"><div><b>LOOK DIFFERENT. FIGHT LEGENDARY.</b><p>Skin tersimpan otomatis di perangkatmu.</p></div><span class="pill">LOCAL SAVE</span></div>
+      <div id="skinGrid" class="skin-grid"></div>
+    </section>
+    <section id="fight" class="screen fight-screen">
+      <div class="fight-top"><button class="back" id="quitBtn">✕</button><div class="round-label">RANKED SIMULATION <b id="roundName">NORMAL MATCH</b></div><div class="timer" id="timer">90</div></div>
+      <div class="health-row"><div class="health-box"><div class="fighter-name">YOU <span id="playerSkinName">ROOKIE</span></div><div class="health-track"><div id="playerHealth" class="health-fill player-fill"></div></div><small id="playerHpText">100 / 100</small></div><div class="health-box enemy-health"><div class="fighter-name">CPU <span id="cpuLevel">EASY AI</span></div><div class="health-track"><div id="cpuHealth" class="health-fill cpu-fill"></div></div><small id="cpuHpText">100 / 100</small></div></div>
+      <div class="arena-wrap"><canvas id="arena" width="1280" height="620"></canvas><div id="toast" class="toast"></div><div class="arena-label">STICKMAN ARENA <span>•</span> SECTOR 07</div></div>
+      <div class="fight-controls"><div class="move-area"><div class="control-label">MOVE</div><div id="joystick" class="joystick"><div class="joy-ring"></div><div id="joyKnob" class="joy-knob"></div></div></div><div class="action-area"><div class="control-label">COMBAT SKILLS</div><div class="skill-row"><button class="skill" id="skill1"><b>1</b><span>⚡</span><small> DASH</small></button><button class="skill" id="skill2"><b>2</b><span>✦</span><small> BLAST</small></button><button class="skill" id="skill3"><b>3</b><span>☄</span><small> ULTIMATE</small></button></div><div class="action-row"><button id="attackBtn" class="attack-btn">拳 &nbsp; ATTACK</button><button id="blockBtn" class="block-btn">◈ BLOCK</button></div></div></div>
+    </section>
+    <section id="result" class="screen result-screen"><div class="result-panel"><div class="result-emblem" id="resultEmblem">✦</div><small id="resultKicker">MATCH COMPLETE</small><h1 id="resultTitle">VICTORY</h1><p id="resultDesc">You dominated the arena.</p><div class="reward"><span>REWARD</span><b>+<strong id="rewardCoins">50</strong> ◆</b></div><div class="result-actions"><button class="primary" id="rematchBtn">↻ &nbsp; REMATCH</button><button class="secondary" id="homeBtn">⌂ &nbsp; MAIN LOBBY</button></div></div></section>
+  </main>
+  <footer><span>© 2026 STICKMAN ARENA</span><span>BUILT FOR OFFLINE PLAY</span></footer>
+</div>
+<script src="game.js"></script>
+</body></html>
